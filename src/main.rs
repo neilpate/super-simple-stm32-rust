@@ -19,7 +19,9 @@ const GPIOE_MODER_ADDR: u32 = GPIOE_ADDR + GPIO_MODER_OFFSET;
 
 #[entry]
 fn main() -> ! {
-    hprintln!("Hello, world!!").unwrap();
+    // Not sure why, but semihosting causes problems when run through VSCode
+    // hprintln!("Hello, world!!").unwrap();
+    // write!("Neil");
 
     unsafe {
         // Enable the GPIOE peripheral
